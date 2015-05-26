@@ -4,7 +4,7 @@ __Instructors:__
 
 * Mike Tamir      : mtamir@galvanize.com
 * Imran Younus        : imran@galvanize.com
-* Jonathan Dinu   : jonathan@galvanize.com
+* Jonathan Dinu   : jonathan@galvanize.com (Guest Lecturer)
 * Jared Thompson  : jared.thompson@galvanize.com
 
 __Class Location:__ 44 Tehama St, 3rd Floor, gU Classroom  
@@ -108,8 +108,8 @@ _(subject to change)_
 |7|2|Bias and Variance Tradeoff||
 |7|3|Recommendation Engines 1||
 |7|4|Recommendation Engines 2||
-|8|1|**review for final exam**|Exercise Set 7 Due|
-|8|2|**Final Exam Day**||
+|8|1|**review for final prep**|Exercise Set 7 Due|
+|8|2|**Final TBD**||
 
 
 
