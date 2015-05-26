@@ -7,10 +7,10 @@ __Instructors:__
 * Jonathan Dinu   : jonathan@galvanize.com
 * Jared Thompson  : jared.thompson@galvanize.com
 
-__Class Location:__ 44 Tehama St, 3rd Floor, gU Classroom
-__Class Time:__ 9:30 - 10:50 PM, M-T-W-Th
-__Lab Time:__ 10:50 - 11:50 PM, M-T-W-Th
-__Office Hours:__ Friday by Appointment
+__Class Location:__ 44 Tehama St, 3rd Floor, gU Classroom  
+__Class Time:__ 9:30 - 10:50 PM, M-T-W-Th  
+__Lab Time:__ 10:50 - 11:50 PM, M-T-W-Th  
+__Office Hours:__ Friday by Appointment  
 
 ## Description of the Course
 
@@ -108,8 +108,8 @@ _(subject to change)_
 |7|2|Bias and Variance Tradeoff||
 |7|3|Recommendation Engines 1||
 |7|4|Recommendation Engines 2||
-|8|1|*review for final exam*|Exercise Set 7 Due|
-|8|2|*Final Exam Day*||
+|8|1|**review for final exam**|Exercise Set 7 Due|
+|8|2|**Final Exam Day**||
 
 
 
