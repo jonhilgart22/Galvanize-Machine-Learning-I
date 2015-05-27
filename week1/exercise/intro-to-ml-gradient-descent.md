@@ -151,7 +151,7 @@ which iteratively updates the coefficients instance variable using the
 4. Fill in the `predict` method so that you can see the predicted values on
 new data.
 
-## Iteration Three: Run gradient descent & compare (12:30 - 1:00)
+## Iteration Three: Run gradient descent & compare
 
 Now we're ready to try out our gradient descent algorithm on some real data.
 
