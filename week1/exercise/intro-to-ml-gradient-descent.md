@@ -69,7 +69,7 @@ Hopefully you can start to see (even this early on) the power of generalizing a 
 
 By doing so our analysis can be much more flexible.  Recall that for OLS the hypothesis function we will be using is the following:
 
-$$y = X\beta + \epsilon$$
+![](images/hypo.png)
 
 1. Fill in the `hypothesis()` function to correctly represent the OLS linear hypothesis.  It should make no assumptions about the number of features or shape of data.
 
