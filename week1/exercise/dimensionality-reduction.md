@@ -1,6 +1,6 @@
 ## Dimensionality Reduction for Data Sparsity -- SVD
 
-There are a few techniques to actually perform the PCA reduction.  In this portion of the sprint we will use Singular Value decomposition (SVD) to deconstruct a feature matrix and perform a dimensionality reduction.
+There are a few techniques to actually perform the PCA reduction.  In this portion of the exercise we will use Singular Value decomposition (SVD) to deconstruct a feature matrix and perform a dimensionality reduction.
 
 We will be using a [book review](http://www2.informatik.uni-freiburg.de/~cziegler/BX/) dataset.  To make the matrix decomposition a little more tractable in the given time, the data files have already been joined and a samlpe of users and books have been taken.  There are 6100 books and 2500 users in the `data/book_reviews.csv`.  Each row corresponds to a given user's rating of a book.
 
@@ -56,7 +56,7 @@ Here is a [picture](images/lecture.jpg) of this topic (drawn by hand).
 
 We will leave this data set for now, but when we get to recommenders we will already have this exploration and transformation under our belt.
 
-## Visualizing High Dimensional Data
+## Extra: Visualizing High Dimensional Data
 
 We have touched on many of the issues and treatments of dealing with data that has many dimensions for modelling purposes.  This last section will focus on trying to better understand our data through visualization.  One technique that is often employed to visualize data of arbitrary dimensions is [Multidimensional Scaling](http://en.wikipedia.org/wiki/Multidimensional_scaling) (MDS).  The basic idea of MDS is to compute similarity in an arbitrarily high dimension (the dimension of your original data) and project this into a two dimensional space in a way to preserve distances.  Basically the points in 2-D space should have the same distances between them as they had in the higher dimensional space.
 
@@ -85,6 +85,4 @@ Lets see if we can discover anything interesting in the way our senators voted i
 7. Try to experiment with different distance metrics and see if the plot you created change.
 8. Also, try to visualize the data according to its first two principle components and plot them in a similar manner.  Does MDS give a different picture than PCA?
 
-## Extra Credit
-
-1. Instead of awkwardly visualizing our data points as the senators names, we can get the best of both worlds (interpretability and inspection) through interactivity! Using [plotly](https://plot.ly/python/) create the same [scatterplot](https://plot.ly/python/line-and-scatter/#Colored-and-Styled-Scatter-Plot) but with a hover interaction so the senators name (and other info) pops up in the tooltip. Plotly kinda defaults to this and gives it to us for free.
+9. Instead of awkwardly visualizing our data points as the senators names, we can get the best of both worlds (interpretability and inspection) through interactivity! Using [plotly](https://plot.ly/python/) create the same [scatterplot](https://plot.ly/python/line-and-scatter/#Colored-and-Styled-Scatter-Plot) but with a hover interaction so the senators name (and other info) pops up in the tooltip. Plotly kinda defaults to this and gives it to us for free.
