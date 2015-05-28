@@ -111,7 +111,11 @@ _(subject to change)_
 |8|1|**review for final prep**|Exercise Set 7 Due|
 |8|2|**Final TBD**||
 
+## Datasets
 
+Here are a bunch of good datasets to use either in your models or in projects:
+
+* [Jonathan's Favorites](https://github.com/Jay-Oh-eN/datasets)
 
 
 
