@@ -84,9 +84,9 @@ _(subject to change)_
 |1|2|K Nearest Neighbours Classifiers||
 |1|3|Dimensionality Reduction||
 |1|4|Gradient Descent||
-|2|1|Naive Bayes Classifier|Exercise Set 1 Due|
+|2|1|Naive Bayes Classifier||
 |2|2|Cross Validation||
-|2|3|Logistic Regression||
+|2|3|Logistic Regression|Exercise Set 1 Due|
 |2|4|Review for skills test||
 |3|1|Regularization|Exercise Set 2 Due<br>Skills Test 1 on Lessons 1.1-2.2|
 |3|2|Support Vector Machines||
