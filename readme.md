@@ -3,7 +3,6 @@
 __Instructors:__
 
 * Mike Tamir      : mtamir@galvanize.com
-* Imran Younus        : imran@galvanize.com
 * Jonathan Dinu   : jonathan@galvanize.com (Guest Lecturer)
 * Jared Thompson  : jared.thompson@galvanize.com
 
@@ -92,11 +91,11 @@ _(subject to change)_
 |3|2|Support Vector Machines||
 |3|3|Evaluation Metrics||
 |3|4|Tuning Best Practices||
-|4|1|Decision Trees|Exercise Set 3 Due|
-|4|2|Random Forests|
-|4|3|Random Forest Cont.||
-|4|4|Review for skills test||
-|5|1|Bagging|Exercise Set 4 Due. Skills Test 2 on Lessons 3.1 through 4.4|
+|4|1|ROC curves|Exercise Set 3 Due|
+|4|2|Decision Trees|
+|4|3|Random Forests||
+|4|4|Model Comparison/tuning<br/>Review for skills test||
+|5|1|Bagging|Exercise Set 4 Due. Skills Test 2 on Lessons 2.3 through 4.1|
 |5|2|Boosting||
 |5|3|Clustering Algorithms||
 |5|4|Methods for Evaluating Clustering Algorithms ||
