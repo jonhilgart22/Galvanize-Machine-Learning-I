@@ -1,4 +1,4 @@
-# Regularization
+# Regularization Review
 
 ## Shrinkage
 
