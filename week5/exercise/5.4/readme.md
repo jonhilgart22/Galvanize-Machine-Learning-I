@@ -66,6 +66,20 @@ The repo contains a 'articles.pkl' file that has 1405 articles from 'Arts','Book
 
 8. Try your clustering only with a subset of the original sections.  Do the topics change or get more specific if you only use 3 sections (i.e. Sports, Art, and Business)?  Are there any cross section topics (i.e. a Sports article that talks about the economics of a baseball team) you can find? 
 
+### Cluster Evaluation
+
+I have uploaded the [Telco dataset](https://github.com/zipfian/DSCI6003-student/blob/master/week4/exercise/data/churn.csv) and a dataset of [congressional voting](https://github.com/zipfian/DSCI6003-student/blob/master/week4/exercise/data/congressional_voting.csv). Try to discover user segments/demographics from the dataset. As seen in lecture there are a few techniques to evaluate our clusters, we are lucky since there are also labels on these two datasets.  We will perform **external** as well as **internal** evaluation.
+
+1. Apply both kmeans and `scikit-learn`s [GMM](http://scikit-learn.org/stable/modules/generated/sklearn.mixture.GMM.html) clustering to the datasets.  
+2. For the Telco dataset use the `churn` column as the label.  For the congressional voting dataset, use the party affiliation as the label.  Varying `k` for both kmeans and GMM, plot the `purity` of the clusters as well as the **within cluster dispersion (WCD)**
+3. From the **WCD** plot, use the elbow method to determine the optimal `k`
+4. According the the purity, which `k` would be selected? Is this the same as the value found from the elbow method?
+5. Is it correct to use the `churn` column and party affiliation in our `purity` calculation?  Why might this not be the best given what we are trying to achieve with our clustering?
+2. Do any meaningful clusters come out from either? What are the characteristics of the user groups from kmeans (i.e. the 'average' user from each group)?
+3. Use the [silhouette score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html) to find the optimal `k`.  Is this the same or different than our above methods?
+5. Run kmeans with this value.  Do the clusters come out to be similar to GMM with the same number of clusters clusters?
+
+## Extra Credit
 
 ### Hierarchical Clustering
 ![dendrogram](images/sortingDendrogram.png)
@@ -112,11 +126,4 @@ Now that we have our dendrogram we can begin exploring the clusters it has made.
     ![words.png](images/words_cluster.png)
 
 
-## Extra Credit
-I have uploaded the Telco dataset and a dataset of congressional voting. Try to discover user segments/demographics from the dataset.
 
-1. Apply both kmeans and hierarchical clustering to the datasets.  Do any meaningful clusters come out from either?
-2. What are the characteristics of the user groups from kmeans (i.e. the 'average' user from each group)?
-3. Try to change the value of k and inspect the clusters.
-4. A benefit of hierarchical clustering is that there is no need to set k.  Using the clusters returned from hierarchical clusters, try to intuit a good value of k.
-5. Run kmeans with this value.  Do the clusters come out to be similar to the hierarchical clusters?
