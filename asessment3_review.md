@@ -1,4 +1,4 @@
-# 6003 Assessment 2
+# 6003 Assessment 3
 
 * Time: 60 minutes
 * Closed book
