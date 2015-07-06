@@ -24,7 +24,6 @@ Here is a review of those two weeks of the course to prepare for the skills test
 ## Bagging
 
 * Properties of Bagging: [notes (Properties section)](https://github.com/zipfian/DSCI6003-student/blob/master/week5/DSCI6003-5.2-Lecture.ipynb#Properties)
-*
 
 ## Boosting
 
