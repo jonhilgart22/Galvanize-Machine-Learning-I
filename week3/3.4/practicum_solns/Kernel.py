@@ -1,5 +1,4 @@
 import numpy.linalg as la
-import numpy as np
 
 class Kernel(object):
     """Implements a list of kernels from
@@ -13,20 +12,28 @@ class Kernel(object):
 
     @staticmethod
     def gaussian(sigma):
-        pass
+        def f(x, y):
+            exponent = -np.sqrt(la.norm(x-y) ** 2 / (2 * sigma ** 2))
+            return np.exp(exponent)
+        return f
 
     @staticmethod
     def _polykernel(dimension, offset):
-        pass
+        def f(x, y):
+            return (offset + np.dot(x, y)) ** dimension
+        return f
 
     @staticmethod
     def inhomogenous_polynomial(dimension):
-        pass
+        return Kernel._polykernel(dimension=dimension, offset=1.0)
 
     @staticmethod
     def homogenous_polynomial(dimension):
-        pass
+        return Kernel._polykernel(dimension=dimension, offset=0.0)
 
     @staticmethod
     def hyperbolic_tangent(kappa, c):
-        pass
+        def f(x, y):
+            return np.tanh(kappa * np.dot(x, y) + c)
+        return f
+
