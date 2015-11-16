@@ -23,29 +23,20 @@ class RandomForest(object):
                                         self.num_features)
 
     def build_forest(self, X, y, num_trees, num_samples, num_features):
-
-        # * Return a list of num_trees DecisionTrees.
-
+        '''
+        Return a list of num_trees DecisionTrees.
+        '''
         pass
 
     def predict(self, X):
-
         '''
         Return a numpy array of the labels predicted for the given test data.
         '''
-
-        # * Each one of the trees is allowed to predict on the same row of input data. The majority vote
-        # is the output of the whole forest. This becomes a single prediction.
-
         pass
 
     def score(self, X, y):
-
         '''
-        Return the accuracy of the Random Forest for the given test data.
+        Return the accuracy of the Random Forest for the given test data and
+        labels.
         '''
-
-        # * In this case you simply compute the accuracy formula as we have defined in class. Compare predicted y to
-        # the actual input y.
-
         pass
