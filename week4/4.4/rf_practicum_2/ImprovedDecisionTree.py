@@ -61,8 +61,8 @@ class ImprovedDecisionTree(object):
         # Call the build_tree function
         self.root = self._build_tree(X, y)
 
-	# Call the prune function
-	self.prune(self.root, X, y)
+	# * Implement the prune function - this is up to you - look at the structure of the function
+
 
     def _build_tree(self, X, y):
         '''
