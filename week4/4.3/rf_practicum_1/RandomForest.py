@@ -25,12 +25,7 @@ class RandomForest(object):
     def build_forest(self, X, y, num_trees, num_samples, num_features):
 
         # * Return a list of num_trees DecisionTrees.
-	# * for each of the num trees
-	# * create an random selection of the indices of the arrays, sampling
-	# with replacement.
-	# * use these sample indices to select a subset of X and y
-	# with the new sample_X and sample_y, build a new tree as a member
-	# of the forest and add to the list. 
+
         pass
 
     def predict(self, X):
