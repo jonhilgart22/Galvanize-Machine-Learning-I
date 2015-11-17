@@ -4,7 +4,7 @@ from collections import Counter
 from TreeNode import TreeNode
 
 
-class DecisionTree(object):
+class ImprovedDecisionTree(object):
     '''
     A decision tree class.
     '''
@@ -61,6 +61,9 @@ class DecisionTree(object):
         # Call the build_tree function
         self.root = self._build_tree(X, y)
 
+	# Call the prune function
+	self.prune(self.root, X, y)
+
     def _build_tree(self, X, y):
         '''
         INPUT:
@@ -75,8 +78,14 @@ class DecisionTree(object):
 
         # * set index, value, splits as the output of self._choose_split_index(X,y)
 
-        # if no index is returned from the split index or we cannot split
-        if index is None or len(np.unique(y)) == 1:
+	# * if splits is not None
+		# * self._pre_prune the tree and set the output flag to preprune parameter
+	# * else
+		# the preprune flag is False
+
+
+        # if no index is returned from the split index or we cannot split or self.preprune = True
+        if index is None or len(np.unique(y)) == 1 or preprune:
             # * set the node to be a leaf
 
             # * set the classes attribute to the number of classes
