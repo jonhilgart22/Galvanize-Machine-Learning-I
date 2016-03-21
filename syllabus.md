@@ -6,8 +6,8 @@ DSCI6003: Machine Learning and Data Analysis
 
 **Class Location:** 44 Tehama St, 3rd Floor, gU Classroom  
 **Lab Time:** 2-4 weekdays  
-**Class Time:** 9:00 to 10:20 AM PST M,T,Th,F  
-**Office Hours:** Wednesday by Appointment    
+**Class Time:** 10:30 to 1:20 AM PST M,T,Th,F  
+**Office Hours:** by Appointment    
 
 - [Description of the Course](#description-of-the-course)
 - [Structure of the Class](#structure-of-the-class)
@@ -30,12 +30,13 @@ Standards
 --------------------------------------------------------------  
 **By the end of this course, you will be able to:**
 
-* Discuss the basic types of supervised models.
-* Discuss the basic types of unsupervised models. 
-* Discuss the different types of regression regularization.
-* Program your own machine learning modules in Python using the scikits-learn paradigm.
-* Select an appropriate regularization technique for regression.
-* 
+
+*Implement standard abstract data structures and basic object oriented programming
+*Perform basic feature engineering and interpret feature interactions.
+*Implement regressions for continuous and discrete variable.
+*Implement and apply basic parametric and nonparametric models.
+*Implement basic clustering algorithms.
+
 
 
 
@@ -118,37 +119,44 @@ Students who are dishonest in any class assignment or exam will receive an "F" i
 
 Tentative Schedule
 --------------------------------------------------------------  
-1. Simple Models
-    1. Introduction to ML
-    2. K-Nearest Neighbors and KNN Lab
-    3. Dimensionality Reduction and SVD Lab
-    4. Naive Bayes and NB Practicum
-2. Basic Regression
-    1. Cross-Validation and Quality Metrics and QM Lab
-    2. Regularized Linear Regression and Regularized Regression Practicum
-    3. Regularized Logistic Regression
-    4. Evaluation Metrics
-3. Linear Models
-    1. SVMs I and SVM Practicum
+1. Review of Fundamentals
+    1. Review of Linear Algebra
+    2. Paths and Unions
+    3. Graphs and Search
+    4. Dynamic Programming and Memoization
+2. Introduction to Machine Learning
+    1. The Machine Learning Landscape
+    2. k-Nearest Neighbors
+    3. The Curse of Dimensionality
+    4. PCA and Dimensionality Reduction
+3. Regression and Validation
+    1. Regularized Regression and Introduction to Kernelization
+    2. Regularized Logistic Regression
+    3. Advanced Regression and Validation Procedures
+    4. Advanced Regression and Model Performance Metrics
+4. Estimators and Probabilistic Models
+    1. Estimator Construction and Introduction to Naive Bayes
+    2. Naive Bayes and its Applications
+    3. Expectation-Maximization and Gaussian Mixture Models
+    4. A/B Testing and the Multiarmed Bandit
+5. Nonparametric Modeling and Ensemble Models
+    1. Decision Trees
+    2. Pruning and Optimization of Decision Trees
+    3. Ensemble Models & Random Forests
+    4. Random Forests
+6. Boosted and Advanced Models
+    1. Adaptive Boosting
+    2. Gradient Boosting
+    3. Feature Engineering and Selection
+    4. Advanced Feature Engineering and Selection
+7. Clustering
+    1. k-Means
+    2. k-Medoids
+    3. Clustering Metrics and Evaluation
+    4. Feature Enrichment through Clustering
+8. SVMs and Recommenders
+    1. SVMs I
     2. SVMs II
-    3. Tuning Linear Models
-4. Forests
-    1. Decision Trees and DT Lab
-    2. Random Forests I and RF Practicum
-    3. Random Forests II
-5. Bagging and Boosting
-    1. Bagging on Standard Classifiers and Bagging Lab
-    2. Adaptive Boosting (Adaboost) and Boosting Practicum
-    3. Gradient Boosting 
-6. Unsupervised Learning
-    1. Introduction 
-    2. K-means and K-medoids algorithm
-    3. Expectation-Maximization: GMMs and GMM Lab
-    4. Proximity Clustering
-    5. Cluster Quality
-7. Other Topics
-    1. Forward and Backward Selection and Selection LAB
-    2. A/B testing - Multi-Armed Bandit Practicum
-8. Special Topics TBD by instructors and students
-    Possible topics: Optimization, Probabilistic Models, Advanced Linear Models, Matrix Factorization
-9. Final Presentations
+    3. Recommenders I
+    4. Recommenders II
+
