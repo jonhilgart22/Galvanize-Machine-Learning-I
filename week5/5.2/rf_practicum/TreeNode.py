@@ -26,7 +26,6 @@ class TreeNode(object):
             - x: 1d numpy array (single data point)
         OUTPUT:
             - y: predicted label
-
         Return the predicted label for a single data point.
         '''
         if self.leaf:
@@ -34,12 +33,12 @@ class TreeNode(object):
         col_value = x[self.column]
 
         if self.categorical:
-            if True:  ### REPLACE WITH YOUR CODE
+            if col_value == self.value:
                 return self.left.predict_one(x)
             else:
                 return self.right.predict_one(x)
         else:
-            if True:  ### REPLACE WITH YOUR CODE
+            if col_value < self.value:
                 return self.left.predict_one(x)
             else:
                 return self.right.predict_one(x)
@@ -51,7 +50,6 @@ class TreeNode(object):
             - level: int (amount to indent)
         OUTPUT:
             - prefix: str (to start the line with)
-
         Return a string representation of the tree rooted at this node.
         '''
         result = ""
