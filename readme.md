@@ -123,7 +123,7 @@ Tentative Schedule
     1. Review of Linear Algebra
     2. Paths and Unions
     3. Graphs and Search
-    4. Dynamic Programming and Memoization
+    4. Dynamic Programming and Memorization
 2. Introduction to Machine Learning
     1. The Machine Learning Landscape
     2. k-Nearest Neighbors
