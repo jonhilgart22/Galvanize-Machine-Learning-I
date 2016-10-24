@@ -1,12 +1,12 @@
 DSCI6003: Machine Learning and Data Analysis
 ===============================================================
 **Instructors:**  
+* [Mike Bowles](mailto:mbowles@newhaven.edu)  
 * [Jared Thompson](mailto:jared.thompson@galvanize.com)  
-* [Amy Yuan](mailto:amy.yuan@galvanize.com)  
 
 **Class Location:** 44 Tehama St, 3rd Floor, gU Classroom  
 **Lab Time:** 2-4 weekdays  
-**Class Time:** 10:30 to 1:20 AM PST M,T,Th,F  
+**Class Time:** 1:00 to 4:00 PM PST M,T,Th,F  
 **Office Hours:** by Appointment    
 
 - [Description of the Course](#description-of-the-course)
