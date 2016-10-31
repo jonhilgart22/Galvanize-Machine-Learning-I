@@ -44,6 +44,14 @@ Structure of the Class
 --------------------------------------------------------------  
 This course will employ a traditional classroom model. What that means is that notes detailing the content of a course will be given before the class. Classroom time will be devoted to covering this material in some detail, usually with added material. RATs will be given the day after. The RATs can encompass both the lecture material and laboratory/practica. Take-home exams will be a recap of the material given in the class. Most of the grade, however, will come from code review for the practica given in class. 
 
+Grading Guideline
+RAT's         -- 15%
+Labs          -- 30%
+Skills Tests  -- 35%
+Final         -- 20%
+
+For full credit, assignments must be turned in on time.  50% credit will be given for materials turned in up to one week late.  
+
 Typical preparation outside of class:
 1. Personal and Group Programming Exercises
 2. Ask questions and raise issues in Slack channel
