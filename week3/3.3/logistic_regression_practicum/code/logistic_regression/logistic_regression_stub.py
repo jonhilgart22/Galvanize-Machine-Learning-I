@@ -1,7 +1,8 @@
-mport numpy as np
+import numpy as np
 from gradient_descent import GradientDescent
+from math import e
 
-__author__ = "You"
+__author__ = "Jonathan Hilgart"
 
 class LogisticRegression(object):
 
@@ -23,8 +24,13 @@ class LogisticRegression(object):
 
 
         # * You'll need to initialize alpha, gama, and the weights (coefficients for the regression)
+        self.coeffs = None
+        self.alpha = None
+        self.gamma = None
 
         # * You'll also need to store the number of iterations
+
+        
 
         # * You'll also need to store a boolean value for whether or
         # * not you fit the intercept and scale
@@ -59,6 +65,9 @@ class LogisticRegression(object):
 
         # * store the coefficients obtained from the gradient descent
 
+
+
+
     def predict(self, X):
         '''
         INPUT: 2 dimensional numpy array, numpy array
@@ -74,8 +83,15 @@ class LogisticRegression(object):
 
         # * return a bool (t/f) value for each percentage, such that percentages above 0.5 are
         # * returned as 1, else 0.
+    
+        threshold = .5
+        bool_t = hypothesis(self, X, self.coeffs)>threshold 
+        bool_f = [1 if i == True for i in bool_t]
+        return bool_f
 
-    def hypothesis(self, X, coeffs):
+
+
+    def hypothesis( X, coeffs):
         '''
         INPUT: 2 dimensional numpy array, numpy array
         OUTPUT: numpy array
@@ -86,6 +102,12 @@ class LogisticRegression(object):
 
         # * The hypothesis function is going to return a proposed probability for each of the test data points
         # * this will be done using the logistic function and the coefficients you've derived from the gradient descent
+
+
+#         for row_index,row in enumerate(X):
+        return   float(1/(1+np.exp(-(coeffs[0]+np.dot(X,coeffs[1:].T)))))
+
+
 
     def cost_function(self, X, y, coeffs):
         '''
@@ -100,6 +122,16 @@ class LogisticRegression(object):
 
         # * return the log-likelihood for each of these predictions  1/M sum y_i*h_i + (1-y_i)*(1-h_i)
         # * using the dot product will help
+
+
+        h = hypothesis(X,coeffs)
+
+        length = len(X)
+        log_likelihood = []
+
+        cost = [(-1/len(X))*sum(y*(log(h)) + (1-y)*(1-h))]
+
+        return cost
 
 
     def cost_gradient(self, X, y, coeffs):
@@ -118,5 +150,11 @@ class LogisticRegression(object):
         # * Calculate the hypothesis function with the input coefficients
 
         # * Return Sum x_i*(y_i - h_i)
+        h = hypothesis(X,coeffs)
+
+        return [(1/len(X)) * sum(((h-y))*(X))]
+
+
+
 
 

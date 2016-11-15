@@ -1,10 +1,10 @@
 import numpy as np
 
-__author__ = "Jared Thompson"
+__author__ = "Jonathan Hilgart"
 
 
 class GradientDescent(object):
-    def __init__(self, fit_intercept=True, normalize=False, gradient=None, mu=None, sigma=None, ):
+    def __init__(self, fit_intercept=True, normalize=False, gradient=None, mu=None, sigma=None):
         '''
         INPUT: GradientDescent, boolean
         OUTPUT: None
@@ -15,17 +15,33 @@ class GradientDescent(object):
         # * initialize and store None to the local copy of coefficients (weights) and alpha (input in the run function)
         # * store boolean values for fit_intercept and normalize
         # * store local copies of gradient, mu and sigma
+        self.coeffs=None
+        self.alpha=None
+        self.fit_intercept = fit_intercept
+        self.normalize = normalize
+        self.gradient = gradient
+        self.mu = mu
+        self.sigma = sigma
+
+
+
 
     def run(self, X, y, coeffs=None, alpha=0.01, num_iterations=100):
 
 
         # * calculate normalization factors
-
+        calculate_normalization_factors(X)
         # * run maybe_modify_matrix here and return the modified matrix
+
+        X= maybe_modify_matrix(X)
 
         # * update the local copies of coefficents and alpha
 
+        
+
         # * if there aren't input coefficients, initialize them to zero.
+        if coeffs ==None:
+            self.coeffs=np.zeros(len(X))
         # * Recall that there should be as many coefficients as features.
 
         # I give you this line here. if fit_intercept = True, set the intercept to 0
@@ -33,6 +49,10 @@ class GradientDescent(object):
             self.coeffs = np.insert(self.coeffs, 0, 0)
 
         # * for each of the num_iterations, update self.coeffs at each step.
+
+        for n in range(num_iterations):
+            #update b as b - alpha * gradient(J)
+            self.coeffs = self.coeffs- alpha*self.gradient(X,self.coeffs)
 
 
     def calculate_normalization_factors(self, X):
@@ -44,8 +64,10 @@ class GradientDescent(object):
         '''
 
         # * set the local copy of mu to be the average of each column of X
+        self.mu=np.mean(X,axis=0)
 
         # * set the local copy of sigma to be the standard deviation of each column of X
+        self.sigma=np.std(X,axis=0)
 
         # I give this to you - Don't normalize the intercept column
         self.mu[self.sigma == 0] = 0
