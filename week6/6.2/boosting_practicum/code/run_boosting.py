@@ -13,8 +13,8 @@ if __name__ == '__main__':
 
     my_ada = AdaBoostBinaryClassifier(n_estimators=50)
     my_ada.fit(train_x, train_y)
-    print "Accurracy of my adaboost:", my_ada.score(test_x, test_y)
+    print ("Accurracy of my adaboost:", my_ada.score(test_x, test_y))
 
     ada = AdaBoostClassifier(n_estimators=50)
     ada.fit(train_x, train_y)
-    print "Accuracy of sklearn:", ada.score(test_x, test_y)
+    print ("Accuracy of sklearn:", ada.score(test_x, test_y))
