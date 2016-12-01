@@ -1,6 +1,6 @@
 from __future__ import division
 import nose
-from code.naive_bayes import NaiveBayes
+from naive_bayes import NaiveBayes
 from nose.tools import assert_equal, assert_not_equal
 import numpy as np
 
