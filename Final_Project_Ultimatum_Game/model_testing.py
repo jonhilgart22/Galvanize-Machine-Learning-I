@@ -1,11 +1,9 @@
 __author__='Jonathan Hilgart'
-from  sklearn.ensemble import GradientBoostingRegressor ##stage plat for MSE
+from  sklearn.ensemble import GradientBoostingRegressor 
 from sklearn.ensemble import RandomForestRegressor
 import xgboost
-from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold
-import matplotlib.pyplot as plt
 import numpy as np
 from math import sqrt
 from scipy.spatial.distance import euclidean
@@ -20,6 +18,7 @@ class Model_Testing_Regression():
 		self.y=y
 		self.number_of_folds=number_of_folds
 		self.X_trainval, self.X_test, self.y_trainval, self.y_test = train_test_split(X,y,test_size=.2) ##smaller test size due to less data
+		self.y_test=self.y_test.reshape(-1,1)
 		self.x_labels =x_labels
 		self.y_label = y_label
 	def random_forest(self, number_estimators=10,n_features='auto', m_depth=None):
@@ -155,7 +154,7 @@ class Model_Testing_Regression():
 			random_search = RandomizedSearchCV(estimator=ElasticNet(),param_distributions=params_dict,cv=cv_n,n_iter=iterations,verbose=1)
 			random_search.fit(self.X_trainval,self.y_trainval)
 			#print(random_search.best_estimator_)
-			self.best_random_forest = random_search.best_estimator_ ## save our best performing estimator
+			self.best_glm_net = random_search.best_estimator_ ## save our best performing estimator
 			return random_search.best_estimator_
 		elif model == 'extreme_gradient_boost':
 			random_search = RandomizedSearchCV(estimator=xgboost.XGBRegressor(),param_distributions=params_dict,cv=cv_n,n_iter=iterations,verbose=1)
@@ -174,12 +173,11 @@ class Model_Testing_Regression():
 			return random_search.best_estimator_
 		else:
 			print('There is no model by that name.')
-
 	def predict(self,model=None):
 		"""Create predictions on the test data given the model."""
 		if model == 'glm_net':
-			self.best_random_forest.fit(self.X_trainval,self.y_trainval)
-			return self.best_random_forest.predict(self.X_test)## predictions
+			self.best_glm_net.fit(self.X_trainval,self.y_trainval)
+			return self.best_glm_net.predict(self.X_test)## predictions
 		elif model == 'extreme_gradient_boost':
 			self.best_extreme_gradient_boost.fit(self.X_trainval,self.y_trainval)
 			return self.best_extreme_gradient_boost.predict(self.X_test)
