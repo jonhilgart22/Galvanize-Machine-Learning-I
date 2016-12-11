@@ -173,22 +173,46 @@ class Model_Testing_Regression():
 			return random_search.best_estimator_
 		else:
 			print('There is no model by that name.')
-	def predict(self,model=None):
+	def predict(self,model=None,data='test'):
 		"""Create predictions on the test data given the model."""
 		if model == 'glm_net':
 			self.best_glm_net.fit(self.X_trainval,self.y_trainval)
-			return self.best_glm_net.predict(self.X_test)## predictions
+			### check below for which data partion to use
+			if data == 'test':
+				self.glm_net_predictions =self.best_glm_net.predict(self.X_test)
+				return self.best_glm_net.predict(self.X_test)## predictions
+			else:
+				self.glm_net_predictions =self.best_glm_net.predict(self.X_trainval)
+				return self.best_glm_net.predict(self.X_trainval)
 		elif model == 'extreme_gradient_boost':
 			self.best_extreme_gradient_boost.fit(self.X_trainval,self.y_trainval)
-			return self.best_extreme_gradient_boost.predict(self.X_test)
+			if data =='test':
+				self.best_extreme_gradient_boost_predictions=self.best_extreme_gradient_boost.predict(self.X_test)
+				return self.best_extreme_gradient_boost.predict(self.X_test)
+			else:
+				self.best_extreme_gradient_boost_predictions=self.best_extreme_gradient_boost.predict(self.X_trainval)
+				return self.best_extreme_gradient_boost.predict(self.X_trainval)
 		elif model == 'gradient_boost':
 			self.best_gradient_boost.fit(self.X_trainval,self.y_trainval)
-			return self.best_gradient_boost.predict(self.X_test)
+			if data =='test':
+				self.best_gradient_boost_predictions = self.best_gradient_boost.predict(self.X_test)
+				return self.best_gradient_boost.predict(self.X_test)
+			else:
+				self.best_gradient_boost_predictions = self.best_gradient_boost.predict(self.X_trainval)
+				return self.best_gradient_boost.predict(self.X_trainval)
 		elif model == 'random_forest':
 			self.best_random_forest.fit(self.X_trainval,self.y_trainval)
-			return self.best_random_forest.predict(self.X_test)
+			if data =='test':
+				self.best_random_forest_predictions = self.best_random_forest.predict(self.X_test)
+				return self.best_random_forest.predict(self.X_test)
+			else:
+				self.best_random_forest_predictions = self.best_random_forest.predict(self.X_trainval)
+				return self.best_random_forest.predict(self.X_trainval)
 		else:
 			print('There is no model by that name.')
+
+
+
 
 
 
