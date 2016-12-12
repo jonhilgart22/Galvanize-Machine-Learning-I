@@ -9,6 +9,7 @@ from math import sqrt
 from scipy.spatial.distance import euclidean
 from sklearn.linear_model import ElasticNet
 from sklearn.model_selection import RandomizedSearchCV
+from sklearn.neighbors import KNeighborsRegressor
 
 class Model_Testing_Regression():
 	"""Test a number of different machine learning regression algorithmns on your data. Need to manually optimize, no gridsearch."""
@@ -146,6 +147,22 @@ class Model_Testing_Regression():
 		sorted_features = self.x_labels[np.argsort(feature_importances_final)[::-1]]
 		return 'RMSE Val:',np.mean(rmse_val),'RMSE Train:',np.mean(rmse_train),'RMSE TEST:',np.mean(rmse_test), [(feature,weight)\
 		 for feature,weight in zip(sorted_features,feature_importances_final[np.argsort(feature_importances_final)[::-1]])]
+	def knn_regression(self,neighbors=5):
+		"""Build a KNN regression problem. return Returns str(rmse val), rmse val, str(rmse train),rmse train, str(rmse test), rmse test, """
+		rmse_val = []
+		rmse_train = []
+		rmse_test = []
+		feature_importances = []
+		feature_importances_final = []
+		for i in range(self.number_of_folds): ## cross validation of the model
+			X_train, X_val, y_train, y_val = train_test_split(self.X_trainval,self.y_trainval,test_size=.2)
+			KNN_model =  KNeighborsRegressor(n_neighbors=neighbors) ## no need to normalize - all columns are in dollars
+			KNN_model.fit(X_train,y_train) ## fit the model
+			rmse_val.append(euclidean(y_val,KNN_model.predict(X_val))/sqrt(len(y_val)))
+			rmse_train.append(euclidean(y_train,KNN_model.predict(X_train))/sqrt(len(y_train)))
+			rmse_test.append(euclidean(self.y_test,KNN_model.predict(self.X_test))/sqrt(len(self.y_test)))
+		return 'RMSE Val:',np.mean(rmse_val),'RMSE Train:',np.mean(rmse_train),'RMSE TEST:',np.mean(rmse_test)
+
 	def random_grid_search(self,model=None,params_dict=None,iterations=100,cv_n=3):
 		"""params is a dict of the parameters for the model. Return the best model parameters. 
 		Model is text for the model selection (glm_net,extreme_gradient_boost,gradient_boost,random_forest.
@@ -170,6 +187,11 @@ class Model_Testing_Regression():
 			random_search = RandomizedSearchCV(estimator=RandomForestRegressor(),param_distributions=params_dict,cv=cv_n,n_iter=iterations,verbose=1)
 			random_search.fit(self.X_trainval,self.y_trainval)
 			self.best_random_forest = random_search.best_estimator_
+			return random_search.best_estimator_
+		elif model =='knn_regression':
+			random_search = RandomizedSearchCV(estimator=KNeighborsRegressor(),param_distributions=params_dict,cv=cv_n,n_iter=iterations,verbose=1)
+			random_search.fit(self.X_trainval,self.y_trainval)
+			self.best_knn_regression = random_search.best_estimator_
 			return random_search.best_estimator_
 		else:
 			print('There is no model by that name.')
@@ -208,6 +230,14 @@ class Model_Testing_Regression():
 			else:
 				self.best_random_forest_predictions = self.best_random_forest.predict(self.X_trainval)
 				return self.best_random_forest.predict(self.X_trainval)
+		elif model =='knn_regression':
+			self.best_knn_regression.fit(self.X_trainval,self.y_trainval)
+			if data =='test':
+				self.best_knn_regression_predictions = self.best_knn_regression.predict(self.X_test)
+				return self.best_knn_regression.predict(self.X_test)
+			else:
+				self.best_random_forest_predictions = self.best_best_knn_regression.predict(self.X_trainval)
+				return self.best_knn_regression.predict(self.X_trainval)
 		else:
 			print('There is no model by that name.')
 
