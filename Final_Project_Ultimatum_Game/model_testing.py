@@ -236,7 +236,7 @@ class Model_Testing_Regression():
 				self.best_knn_regression_predictions = self.best_knn_regression.predict(self.X_test)
 				return self.best_knn_regression.predict(self.X_test)
 			else:
-				self.best_random_forest_predictions = self.best_best_knn_regression.predict(self.X_trainval)
+				self.best_random_forest_predictions = self.best_knn_regression.predict(self.X_trainval)
 				return self.best_knn_regression.predict(self.X_trainval)
 		else:
 			print('There is no model by that name.')
